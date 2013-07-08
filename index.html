@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brooklyn Coop Walgreen&#39;s Free ATMs - Google Fusion Tables</title>
+<style type="text/css">
+html, body, #googft-mapCanvas {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+</style>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.10&amp;sensor=false"></script>
+
+<script type="text/javascript">
+  function initialize() {
+    var map = new google.maps.Map(document.getElementById('googft-mapCanvas'), {
+      center: new google.maps.LatLng(40.727853788443824, -73.92841175651954),
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col1",
+        from: "1tu7SQC5DKv6UA3_E8eGIacP8e89LhOdU9BNwmUk",
+        where: ""
+      },
+      options: {
+        styleId: 2,
+        templateId: 2
+      }
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+  <div id="googft-mapCanvas"></div>
+</body>
+</html>
